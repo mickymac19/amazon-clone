@@ -6,6 +6,17 @@ function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    const signIn = e => {
+        e.preventDefault();
+
+        // some fancy firebase login....
+    }
+
+    const register = e => {
+        e.preventDefault(); 
+    }
+
+        // some fancy firebase register... 
     return (
         <div className="login">
             <Link to='/'>
@@ -24,7 +35,8 @@ function Login() {
                     <h5>Password</h5>
                     <input type='password' value={password} onChange={e => setPassword(e.target.value)}  />
 
-                    <button className='login__signInButton'>Sign In</button>
+                    <button type='submit' onClick={signIn}
+                    className='login__signInButton'>Sign In</button>
                 </form>
 
                 <p>
@@ -34,7 +46,7 @@ function Login() {
                     Notice.
                 </p>
 
-                <button className='login__registerButton'>Create your Amazon Account</button>
+                <button onClick={register} className='login__registerButton'>Create your Amazon Account</button>
             </div>
         </div>
     );
