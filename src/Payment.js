@@ -64,7 +64,7 @@ function Payment() {
                 basket: basket,
                 amount: paymentIntent.amount,
                 created: paymentIntent.created
-               })
+               });
 
             setSucceeded(true);
             setError(null)
@@ -72,17 +72,17 @@ function Payment() {
 
             dispatch({
                 type: 'EMPTY_BASKET'
-            })
+            });
 
             history.replace('/orders')
-        })
+        });
         
-    }
+    };
 
     const handleChange = event => {
         setDisabled(event.empty);
         setError(event.error ? event.error.message :""); 
-    }
+    };
 
 
     return (
@@ -154,7 +154,7 @@ function Payment() {
 
             </div>
         </div>
-    )
+    );
 }
 
 export default Payment; 
